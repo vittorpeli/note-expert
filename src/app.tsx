@@ -46,7 +46,7 @@ export default function App() {
   : notes
 
   return (
-    <div className='mx-auto max-w-6xl my-12 py-0 px-5 space-y-6'>
+    <div className='mx-auto max-w-6xl my-12 px-5 space-y-6'>
       <img src={logo} alt="NLW Expert" />
 
       <form className='w-full'>
@@ -60,7 +60,7 @@ export default function App() {
 
       <div className='h-px bg-slate-700'/>
 
-      <div className="grid grid-cols-3 gap-4 auto-rows-[250px]">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[250px]">
         
         <NewNoteCard onNoteCreated={onNoteCreated}/>
 
