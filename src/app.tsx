@@ -35,6 +35,14 @@ export default function App() {
     localStorage.setItem('notes', JSON.stringify(notesArray))
   }
 
+  function onNoteDelete(id: string) {
+    const deletedNote = notes.filter(note => {
+      return note.id !== id
+    })
+
+    setNotes(deletedNote)
+  }
+
   function handleSearch(event: ChangeEvent<HTMLInputElement>) {
     const query = event.target.value
 
@@ -65,7 +73,7 @@ export default function App() {
         <NewNoteCard onNoteCreated={onNoteCreated}/>
 
         {filteredNotes.map(note => {
-          return <NoteCard key={note.id} note={note} />;
+          return <NoteCard key={note.id} note={note} onNoteDelete={onNoteDelete}/>;
         })}
         
       </div>
